@@ -7,6 +7,7 @@ import './Navbar.css';
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
+    const [navbar, setNavbar] = useState(false);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -27,9 +28,20 @@ const Navbar = () => {
         }
     }
 
+    const changedBackground = () => {
+        if(window.scrollY >= 80){
+            setNavbar(true);
+        }else{
+            setNavbar(false);
+        }
+    }
+
+    window.addEventListener('scroll', changedBackground);
+
     return (
         <>
-            <nav className='navbar'>
+            <nav className={navbar ? 'navbars active' : 'navbars'}>
+                <div className="navbar-container">
                 <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                     EPIC
                     <i class='fab fa-firstdraft' />
@@ -86,6 +98,7 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <Button />
+                </div>
             </nav>
         </>
     );

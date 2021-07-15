@@ -1,12 +1,27 @@
-.navbar {
+.navbars {
     background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+   /* background-color: transparent; */
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
   
+  .navbars.active{
+    background: linear-gradient(90deg, rgb(66, 2, 194) 0%, rgb(0, 70, 194) 100%);
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+  }
   .navbar-logo {
     color: #fff;
     justify-self: start;
@@ -39,7 +54,7 @@
   }
   
   .nav-links {
-    color: white;
+    color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
   }
