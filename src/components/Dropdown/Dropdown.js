@@ -5,12 +5,11 @@ import './Dropdown.css';
 
 const Dropdown = () => {
     const [click, setClick] = useState(false);
-    // const [dropdown, setDropdown] = useState(false);
 
     const handleClick = () => setClick(!click);
 
     return (
-        <div>
+        <>
             <ul onClick={handleClick}
                 className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}>
                 {
@@ -25,7 +24,7 @@ const Dropdown = () => {
                     })
                 }
             </ul>
-        </div>
+        </>
     );
 };
 
